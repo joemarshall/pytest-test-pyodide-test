@@ -28,7 +28,7 @@ jobs:
         path: dist
   test:
     needs: build
-    uses: joemarshall/pytest-pyodide/.github/workflows/main.yml@action-test
+    uses: joemarshall/pytest-pyodide/.github/workflows/main.yml@call-pytest-in-pyodide
     with:
       build-artifact-name: pyodide wheel
       build-artifact-path: dist
