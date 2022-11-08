@@ -38,5 +38,3 @@ jobs:
     with:
       build-artifact-name: pyodide wheel
       build-artifact-path: dist
-      browsers: firefox
-      runners: selenium
