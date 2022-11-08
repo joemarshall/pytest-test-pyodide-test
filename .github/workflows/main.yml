@@ -26,9 +26,17 @@ jobs:
       with:
         name: pyodide wheel
         path: dist
-  test:
+  test_single:
     needs: build
     uses: joemarshall/pytest-pyodide/.github/workflows/main.yaml@call-pytest-in-pyodide
     with:
       build-artifact-name: pyodide wheel
       build-artifact-path: dist
+  test_multi:
+    needs: build
+    uses: joemarshall/pytest-pyodide/.github/workflows/testall.yaml@call-pytest-in-pyodide
+    with:
+      build-artifact-name: pyodide wheel
+      build-artifact-path: dist
+      browsers: firefox
+      runners: selenium
